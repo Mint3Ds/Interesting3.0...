@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d6c7a6">
+  <title>Memory Lane — Happy Birthday, Mom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Parisienne&family=Noto+Sans+Myanmar:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mom-birthday-surprise.css">
+</head>
+<body class="is-locked">
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite" hidden>
+    <div class="loading-card"><span class="loading-flower" aria-hidden="true">✿</span><p class="eyebrow">A little birthday surprise</p><p class="loading-copy">Gathering your memories…</p><div class="loading-track"><span></span></div></div>
+  </div>
+  <section class="password-gate show" id="password-gate" role="dialog" aria-modal="true" aria-labelledby="password-title">
+    <div class="password-card"><span class="gate-flower" aria-hidden="true">✿</span><p class="eyebrow">A little surprise</p><h1 id="password-title">Just for you</h1><p class="password-note">Enter the birthday code to open your surprise.</p><form id="password-form"><label for="birthday-password">THE SECRET CODE</label><input id="birthday-password" name="birthday-password" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="••••" autocomplete="off" required><button class="lets-go password-submit" type="submit">Open the surprise <span aria-hidden="true">→</span></button><p class="password-error" id="password-error" role="alert" hidden>That code isn't quite right. Try again.</p></form><p class="gate-hint">a birthday memory lane is waiting</p></div>
+  </section>
+  <section class="birthday-gate" id="birthday-gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-hidden="true">
+    <div class="gate-card"><span class="gate-flower" aria-hidden="true">✿</span><p class="eyebrow"></p><h1 id="gate-title">Happy Birthday,<br>Mom!</h1><div class="gate-message" lang="my"><p>မွေးနေ့မှာ ပျော်ရွှင်မှုတွေအပြည့်နဲ့ ဖြတ်သန်းနိုင်ပါစေ မေမေ။ ❤️ မေမေ့ကို အရမ်းချစ်တယ်။</p><p>အေးခဲလွန်းတဲ့ နှင်းတွေကြားမှာ နွေးထွေးတဲ့ နေရောင်ခြည်လေးတစ်ခုလို၊ မုန်တိုင်းထန်တဲ့ မိုးတွေကြားမှာ ခိုလှုံစရာ အမိုးအကာလေးတစ်ခုလို၊ အမှောင်ဆုံးညတွေမှာတောင် လမ်းပြပေးတဲ့ အလင်းရောင်လေးတစ်ခုလို သားရဲ့ဘဝမှာ အမြဲတမ်း အနားမှာရှိနေပေးခဲ့တဲ့ မေမေပါ။</p><p>မေမေ သားအတွက် ပင်ပန်းခံပြီး ပေးဆပ်ခဲ့သမျှနဲ့ မေမေ့ရဲ့ မေတ္တာတွေကို သား ဘယ်တော့မှ မေ့မှာမဟုတ်ပါဘူး။</p><p>မေမေ့ကို ဂုဏ်ယူရတဲ့ သားတစ်ယောက်ဖြစ်လာအောင် အကောင်းဆုံးကြိုးစားသွားမယ်လို့ ကတိပေးပါတယ်။</p><p class="gate-birthday-close" lang="en">Happy Birthday Mom!</p></div><p class="gate-sign">With all our love</p><button class="lets-go" id="lets-go" type="button">Let's go <span aria-hidden="true">→</span></button><p class="gate-hint">your birthday memories are waiting</p></div>
+  </section>
+  <div class="ambient" aria-hidden="true"></div>
+  <button class="memory-toggle" type="button" aria-label="Resume automatic memory lane scroll" aria-pressed="false"><span class="memory-toggle-icon" aria-hidden="true">▶</span><span class="memory-toggle-label">auto-scroll paused</span></button>
+  <button class="sound-toggle" type="button" aria-label="Turn birthday music on" aria-pressed="false"><span class="sound-icon">♫</span><span class="sound-label">sound off</span></button>
+  <main class="lane" aria-label="A birthday memory lane for Mom" tabindex="0" hidden>
+    <section class="finale panel" aria-label="Birthday wish">
+      <div class="finale-copy"><h2>Happy Birthday,<br>Mom!</h2><p class="finale-note">Today we celebrate you—and all the love you give.</p><p class="wish-prompt">Tap any candle to make a wish.</p></div>
+      <div class="birthday-cake" role="group" aria-label="Birthday cake. Tap each candle to blow it out.">
+        <div class="cake-candles"><button class="candle" type="button" aria-label="Blow out candle one" aria-pressed="false"><span class="flame"></span></button><button class="candle" type="button" aria-label="Blow out candle two" aria-pressed="false"><span class="flame"></span></button><button class="candle" type="button" aria-label="Blow out candle three" aria-pressed="false"><span class="flame"></span></button></div>
+        <div class="icing"></div><div class="cake-tier cake-upper"></div><div class="cake-tier cake-lower"></div><div class="cake-plate"></div>
+      </div>
+      <p class="finale-sign">We love you, always.</p>
+      <span class="finale-flower flower-a" aria-hidden="true">✿</span><span class="finale-flower flower-b" aria-hidden="true">✾</span>
+    </section>
+<article class="polaroid" data-memory="memory-04">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-04.jpg" alt="Personal birthday memory photo 4" loading="eager" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">July 18, 2024 · 3:08 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>
+    <article class="polaroid wide tilt-left" data-memory="memory-03">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-03.jpg" alt="Personal birthday memory photo 3" loading="eager" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">June 24, 2024 · 11:57 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>
+    <article class="polaroid tilt-right" data-memory="memory-02">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-02.jpg" alt="Personal birthday memory photo 2" loading="eager" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">June 23, 2024 · 11:36 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>
+   <article class="polaroid wide tilt-right" data-memory="memory-05">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-05.jpg" alt="Personal birthday memory photo 5" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">July 20, 2024 · 8:53 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-06">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-06.jpg" alt="Personal birthday memory photo 6" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 6, 2024 · 10:52 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-07">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-07.jpg" alt="Personal birthday memory photo 7" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 7, 2024 · 1:08 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-08">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-08.jpg" alt="Personal birthday memory photo 8" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 10, 2024 · 6:53 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-left" data-memory="memory-09">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-09.jpg" alt="Personal birthday memory photo 9" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 12, 2024 · 6:46 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-10">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-10.jpg" alt="Personal birthday memory photo 10" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 19, 2024 · 8:51 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-11">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-11.jpg" alt="Personal birthday memory photo 11" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 19, 2024 · 8:51 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-12">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-12.jpg" alt="Personal birthday memory photo 12" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 27, 2024 · 2:29 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-13">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-13.jpg" alt="Personal birthday memory photo 13" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 27, 2024 · 3:20 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-14">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-14.jpg" alt="Personal birthday memory photo 14" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 27, 2024 · 4:16 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-left" data-memory="memory-15">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-15.jpg" alt="Personal birthday memory photo 15" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 30, 2025 · 10:30 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-16">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-16.jpg" alt="Personal birthday memory photo 16" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 31, 2025 · 4:20 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-17">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-17.jpg" alt="Personal birthday memory photo 17" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">August 31, 2025 · 4:20 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-18">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-18.jpg" alt="Personal birthday memory photo 18" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 7, 2025 · 2:23 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid" data-memory="memory-19">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-19.jpg" alt="Personal birthday memory photo 19" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 7, 2025 · 2:55 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-20">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-20.jpg" alt="Personal birthday memory photo 20" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 10, 2025 · 11:26 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-21">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-21.jpg" alt="Personal birthday memory photo 21" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 13, 2025 · 7:01 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-22">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-22.jpg" alt="Personal birthday memory photo 22" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 14, 2025 · 1:10 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-23">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-23.jpg" alt="Personal birthday memory photo 23" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 16, 2025 · 10:44 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-24">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-24.jpg" alt="Personal birthday memory photo 24" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 16, 2025 · 10:45 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-25">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-25.jpg" alt="Personal birthday memory photo 25" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 17, 2025 · 8:52 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-26">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-26.jpg" alt="Personal birthday memory photo 26" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 16, 2026 · 10:14 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-27">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-27.jpg" alt="Personal birthday memory photo 27" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 17, 2026 · 11:01 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid" data-memory="memory-28">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-28.jpg" alt="Personal birthday memory photo 28" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 19, 2026 · 9:26 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-29">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-29.jpg" alt="Personal birthday memory photo 29" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 19, 2026 · 9:39 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-30">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-30.jpg" alt="Personal birthday memory photo 30" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 20, 2026 · 6:08 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>><article class="polaroid tilt-right" data-memory="memory-32">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-32.jpg" alt="Personal birthday memory photo 32" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 21, 2026 · 1:30 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-33">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-33.jpg" alt="Personal birthday memory photo 33" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 25, 2026 · 6:45 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-34">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-34.jpg" alt="Personal birthday memory photo 34" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 25, 2026 · 6:51 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-35">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-35.jpg" alt="Personal birthday memory photo 35" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 25, 2026 · 6:52 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-36">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-36.jpg" alt="Personal birthday memory photo 36" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 26, 2026 · 7:20 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-37">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-37.jpg" alt="Personal birthday memory photo 37" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 28, 2026 · 7:20 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-38">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-38.jpg" alt="Personal birthday memory photo 38" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Mom and Dad beneath the airport canopy</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-left" data-memory="memory-39">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-39.jpg" alt="Personal birthday memory photo 39" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A stroll along the covered city walkway</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-40">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-40.jpg" alt="Personal birthday memory photo 40" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Sharing a treat at the mall café</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-41">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-41.jpg" alt="Personal birthday memory photo 41" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A family photo in the mall corridor</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-42">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-42.jpg" alt="Personal birthday memory photo 42" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Beneath the autumn decorations</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-43">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-43.jpg" alt="Personal birthday memory photo 43" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">September 20, 2026 · 11:02 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-right" data-memory="memory-44">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-44.jpg" alt="Personal birthday memory photo 44" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A selfie beside the blue aquarium tank</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide tilt-left" data-memory="memory-45">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-45.jpg" alt="Personal birthday memory photo 45" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Together beside the lake</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-46">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-46.jpg" alt="Personal birthday memory photo 46" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Mom and son at the aquarium</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-47">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-47.jpg" alt="Personal birthday memory photo 47" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A selfie together on the plane</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-left" data-memory="memory-48">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-48.jpg" alt="Personal birthday memory photo 48" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Sharing a snack at the café</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid square" data-memory="memory-49">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-49.jpg" alt="Personal birthday memory photo 49" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A silly selfie with the party filter</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-50">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-50.jpg" alt="Personal birthday memory photo 50" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">Mom by the carved stone wall</p>
+          <span class="photo-date">TEMP MEMORY</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-left" data-memory="memory-51">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-51.jpg" alt="Personal birthday memory photo 51" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">October 31, 2024 · 12:53 AM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid" data-memory="memory-52">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-52.jpg" alt="Personal birthday memory photo 52" loading="lazy" decoding="async"></div>
+          <p class="photo-caption date-main" contenteditable="true" spellcheck="false">November 15, 2025 · 4:43 PM</p>
+          
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>><article class="polaroid tilt-left" data-memory="memory-54">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-54.jpg" alt="Personal birthday memory photo 54" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A family selfie with a playful filter</p>
+          <span class="photo-date">September 20, 2026</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid wide" data-memory="memory-55">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-55.jpg" alt="Personal birthday memory photo 55" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">A silly family selfie with matching glasses</p>
+          <span class="photo-date">September 26, 2026</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+   <article class="polaroid tilt-right" data-memory="memory-56">
+      <div class="polaroid-inner">
+        <div class="polaroid-face polaroid-front">
+          <div class="photo-wrap"><img src="photo-56.jpg" alt="Personal birthday memory photo 56" loading="lazy" decoding="async"></div>
+          <p class="photo-caption" contenteditable="true" spellcheck="false">By the lake at Nottingham Malaysia</p>
+          <span class="photo-date">September 28, 2026</span>
+        </div>
+        
+      </div>
+      <span class="tape" aria-hidden="true"></span>
+    </article>>
+
+</main>
+  <div class="petal-layer" aria-hidden="true"></div>
+  <script src="main.js" defer></script>
+</body>
+</html>
+
+
+
